@@ -24,10 +24,10 @@ class Database {
   }
 
   mongo() {
-    this.mongoConnection = mongoose.connect(
-      'mongodb+srv://birds:birds-123@cluster0-ypa0j.mongodb.net/test?retryWrites=true&w=majority',
-      { useNewUrlParser: true, useFindAndModify: true }
-    );
+    this.mongoConnection = mongoose.connect(process.env.MONGO_URL, {
+      useNewUrlParser: true,
+      useFindAndModify: true,
+    });
   }
 }
 
